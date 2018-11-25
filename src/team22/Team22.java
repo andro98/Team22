@@ -64,7 +64,7 @@ public class Team22 {
                 break;
 
             case 9: //reverse array
-                reversearray(arr);    
+                reversearray();    
                 break;
 
             case 10: //shift array
@@ -107,15 +107,17 @@ public class Team22 {
     }
 	public static void reversearray()
     {   int j=0;
-     int ar []= new int[arr.length];
+     String ar []= new String[arr.length];
         for(int i=arr.length-1;i>=0;i--)//do reverse
         {
          ar[j]=arr[i];
          j++;
         }
         for(int i=0;i<ar.length;i++)//print reverse arr
-        {   if(i==ar.length-1) System.out.println(ar[i]);
-            else  System.out.print(ar[i]+",");
+        {   if(i==ar.length-1) 
+				System.out.println(ar[i]);
+            else  
+				System.out.print(ar[i]+",");
         }   
     }
     private static void printMenu() {
