@@ -128,25 +128,25 @@ public class Team22 {
         System.out.println("18-\tExecute All");
 
     }
-	private static void leastPrime(string[] a,int size)
+	private static void leastPrime()
 	{	int lp = Integer.MAX_VALUE;
-		for (int l = 0; l < size; ++l) 
+		for (int l = 0; l < arr.length; ++l) 
 	{
-      if (Integer.parseInt(numbers[l]) == 2) 
+      if (Integer.parseInt(arr[l]) == 2) 
 	  {
-        lp = Integer.parseInt(numbers[l]);
+        lp = Integer.parseInt(arr[l]);
         break;
       }
-      if (Integer.parseInt(numbers[l]) == 3)
-        lp = Integer.parseInt(numbers[l]);
-      if (Integer.parseInt(numbers[l]) % 2 == 0)
+      if (Integer.parseInt(arr[l]) == 3)
+        lp = Integer.parseInt(arr[l]);
+      if (Integer.parseInt(arr[l]) % 2 == 0)
         continue;
-      for (int i = 3; i <= (int) Math.sqrt(Integer.parseInt(numbers[l])) + 1; i += 2) 
+      for (int i = 3; i <= (int) Math.sqrt(Integer.parseInt(arr[l])) + 1; i += 2) 
 	  {
-        if (Integer.parseInt(numbers[l]) % i == 0 && Integer.parseInt(numbers[l]) != 3)
+        if (Integer.parseInt(arr[l]) % i == 0 && Integer.parseInt(arr[l]) != 3)
           break;
-        if (lp >= Integer.parseInt(numbers[l]))
-          lp = Integer.parseInt(numbers[l]);
+        if (lp >= Integer.parseInt(arr[l]))
+          lp = Integer.parseInt(arr[l]);
       }
     }
     if (lp == Integer.MAX_VALUE)
