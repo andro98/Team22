@@ -48,7 +48,7 @@ public class Team22 {
                 break;
 
             case 5: //find smallest prime
-				leastPrime(arr,siz);
+				leastPrime();
                 break;
 
             case 6: //check palindrome
@@ -132,6 +132,11 @@ public class Team22 {
 	{	int lp = Integer.MAX_VALUE;
 		for (int l = 0; l < arr.length; ++l) 
 	{
+		if ( Character.isLetter(numbers[l].charAt(l)))
+		{
+			System.out.println("Function is applied on numbers only!");
+			break;
+		}
       if (Integer.parseInt(arr[l]) == 2) 
 	  {
         lp = Integer.parseInt(arr[l]);
