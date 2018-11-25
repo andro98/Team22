@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package team22;
-
+java.lang.NumberFormatException;
+import java.lang.Math;
 import java.util.Scanner;
 
 /**
@@ -47,7 +48,7 @@ public class Team22 {
                 break;
 
             case 5: //find smallest prime
-
+				leastPrime(arr,siz);
                 break;
 
             case 6: //check palindrome
@@ -127,4 +128,30 @@ public class Team22 {
         System.out.println("18-\tExecute All");
 
     }
+	private static void leastPrime(string[] a,int size)
+	{	int lp = Integer.MAX_VALUE;
+		for (int l = 0; l < size; ++l) 
+	{
+      if (Integer.parseInt(numbers[l]) == 2) 
+	  {
+        lp = Integer.parseInt(numbers[l]);
+        break;
+      }
+      if (Integer.parseInt(numbers[l]) == 3)
+        lp = Integer.parseInt(numbers[l]);
+      if (Integer.parseInt(numbers[l]) % 2 == 0)
+        continue;
+      for (int i = 3; i <= (int) Math.sqrt(Integer.parseInt(numbers[l])) + 1; i += 2) 
+	  {
+        if (Integer.parseInt(numbers[l]) % i == 0 && Integer.parseInt(numbers[l]) != 3)
+          break;
+        if (lp >= Integer.parseInt(numbers[l]))
+          lp = Integer.parseInt(numbers[l]);
+      }
+    }
+    if (lp == Integer.MAX_VALUE)
+      System.out.println("No primes");
+    else
+      System.out.print(lp);	
+	}
 }
