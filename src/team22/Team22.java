@@ -55,7 +55,7 @@ public class Team22 {
                 break;
 
             case 7: //check sorted
-
+                checkSorted();
                 break;
 
             case 8: //count primes
@@ -126,5 +126,16 @@ public class Team22 {
         System.out.println("17-\tZero if less than zero");
         System.out.println("18-\tExecute All");
 
+    }
+    
+    public static void checkSorted(){
+        for(int i = 0; i<arr.length -1 ; i++){
+            if(arr[i].charAt(0) >  arr[i + 1].charAt(0))
+            {
+                System.out.println("Array is not Sorted");
+                return;
+            }
+        }
+         System.out.println("Array is Sorted");
     }
 }
