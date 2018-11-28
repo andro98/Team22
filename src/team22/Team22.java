@@ -65,10 +65,14 @@ import java.util.Scanner;
              	countPrimes(arr);
                  break;
 
+
              case 9: //reverse array
 
                  break;
 
+            case 7: //check sorted
+                checkSorted();
+                break;
              case 10: //shift array
 
                  break;
@@ -159,6 +163,7 @@ import java.util.Scanner;
  	}
  	}
 
+
  public static boolean isprime(int n) {
  	
  	for(int i=2;i<n;i++) {
@@ -169,3 +174,17 @@ import java.util.Scanner;
  	
  }
  }
+
+    }
+    
+    public static void checkSorted(){
+        for(int i = 0; i<arr.length -1 ; i++){
+            if(arr[i].charAt(0) >  arr[i + 1].charAt(0))
+            {
+                System.out.println("Array is not Sorted");
+                return;
+            }
+        }
+         System.out.println("Array is Sorted");
+    }
+}
