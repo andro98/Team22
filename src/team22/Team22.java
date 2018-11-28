@@ -4,20 +4,20 @@
  * and open the template in the editor.
  */
 package team22;
-java.lang.NumberFormatException;
+import java.lang.NumberFormatException;
 import java.lang.Math;
 import java.util.Scanner;
 
 /**
  *
  * @author AndrOoO
- */package assgit;
+ */
  import java.util.Scanner;
 
  public class Team22 {
 
      private static String[] arr;
-
+     static GetMedian obj = new GetMedian();
      public static void main(String[] args) {
 
      	System.out.println("Team 22");
@@ -45,23 +45,18 @@ import java.util.Scanner;
              case 3: //shuffle
 
                  break;
-
-            case 5: //find smallest prime
-				leastPrime();
-                break;
              case 4: //find largest prime
 
                  break;
-
-             case 5: //find smallest prime
-
+             case 5:
+                 //find smallest prime
+                 leastPrime();
                  break;
-
              case 6: //check palindrome
 
                  break;
 
-             case 7: //check sorted
+             case 7: checkSorted();
 
                  break;
 
@@ -71,11 +66,6 @@ import java.util.Scanner;
 
 
              case 9: //reverse array
-
-                 break;
-
-            case 7: //check sorted
-                checkSorted();
                 break;
              case 10: //shift array
 
@@ -98,7 +88,7 @@ import java.util.Scanner;
                  break;
 
              case 15: //get median
-
+                 System.out.println(obj.getMedian(arr, siz));
                  break;
 
              case 16: //return only primes
@@ -177,14 +167,11 @@ import java.util.Scanner;
      return true;
  	
  }
- }
-
-    }
 	private static void leastPrime()
 	{	int lp = Integer.MAX_VALUE;
 		for (int l = 0; l < arr.length; ++l) 
 	{
-		if ( Character.isLetter(numbers[l].charAt(l)))
+		if ( Character.isLetter(arr[l].charAt(l)))
 		{
 			System.out.println("Function is applied on numbers only!");
 			break;
@@ -222,4 +209,5 @@ import java.util.Scanner;
         }
          System.out.println("Array is Sorted");
     }
+    
 }
