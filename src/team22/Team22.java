@@ -14,7 +14,10 @@ import java.util.Scanner;
  */
  import java.util.Scanner;
 
+    private static String[] arr;
+	 
  public class Team22 {
+
 
      private static String[] arr;
      static GetMedian obj = new GetMedian();
@@ -48,24 +51,21 @@ import java.util.Scanner;
              case 4: //find largest prime
 
                  break;
-             case 5:
-                 //find smallest prime
-                 leastPrime();
+             case 5: //find smallest prime
+              leastPrime();
                  break;
              case 6: //check palindrome
 
                  break;
 
-             case 7: checkSorted();
-
-                 break;
-
+             case 7: //check sorted
+             checkSorted();
+                break;
              case 8: //count primes
-             	countPrimes(arr);
+             	countPrimes();
                  break;
-
-
              case 9: //reverse array
+             reversearray();    
                 break;
              case 10: //shift array
 
@@ -90,57 +90,66 @@ import java.util.Scanner;
              case 15: //get median
                  System.out.println(obj.getMedian(arr, siz));
                  break;
-
+              break;
              case 16: //return only primes
-
-                 break;
-
+             
+              break;
              case 17: //zero if less than zero
-
-                 break;
-
+                
+             break;
              case 18: //execute all
-
                  break;
+    }
+	public static void reversearray()
+    {   int j=0;
+     String ar []= new String[arr.length];
+        for(int i=arr.length-1;i>=0;i--)//do reverse
+        {
+         ar[j]=arr[i];
+         j++;
+        }
+        for(int i=0;i<ar.length;i++)//print reverse arr
+        {   if(i==ar.length-1) 
+				System.out.println(ar[i]);
+            else  
+				System.out.print(ar[i]+",");
+        }   
+    }
+    private static void printMenu() {
+        System.out.println("Choose the number of operation you want to execute:");
+        System.out.println("1-\tMost repeated value");
+        System.out.println("2-\tSort");
+        System.out.println("3-\tShuffle");
+        System.out.println("4-\tFind the largest prime");
+        System.out.println("5-\tFind the smallest prime");
+        System.out.println("6-\tCheck palindrome");
+        System.out.println("7-\tCheck sorted");
+        System.out.println("8-\tCount primes");
+        System.out.println("9-\tReverse array");
+        System.out.println("10-\tShift array");
+        System.out.println("11-\tDistinct array");
+        System.out.println("12-\tGet the maximum 3 numbers");
+        System.out.println("13-\tGet the minimum 3 numbers");
+        System.out.println("14-\tGet average");
+        System.out.println("15-\tGet median");
+        System.out.println("16-\tReturn only primes");
+        System.out.println("17-\tZero if less than zero");
+        System.out.println("18-\tExecute All");
+             
          }
 
      }
-
-     private static void printMenu() {
-         System.out.println("Choose the number of operation you want to execute:");
-         System.out.println("1-\tMost repeated value");
-         System.out.println("2-\tSort");
-         System.out.println("3-\tShuffle");
-         System.out.println("4-\tFind the largest prime");
-         System.out.println("5-\tFind the smallest prime");
-         System.out.println("6-\tCheck palindrome");
-         System.out.println("7-\tCheck sorted");
-         System.out.println("8-\tCount primes");
-         System.out.println("9-\tReverse array");
-         System.out.println("10-\tShift array");
-         System.out.println("11-\tDistinct array");
-         System.out.println("12-\tGet the maximum 3 numbers");
-         System.out.println("13-\tGet the minimum 3 numbers");
-         System.out.println("14-\tGet average");
-         System.out.println("15-\tGet median");
-         System.out.println("16-\tReturn only primes");
-         System.out.println("17-\tZero if less than zero");
-         System.out.println("18-\tExecute All");
-
-     }
-
-
- public static void countPrimes(String [] mynum) {
+ public static void countPrimes() {
  	int counter = 0;
- 	for (int i = 0; i<mynum.length; i++) {
- 		if ( (mynum[i].toCharArray()[0] >= 'a' && mynum[i].toCharArray()[0]  <= 'z') ||
- 		           (mynum[i].toCharArray()[0]  >= 'A' && mynum[i].toCharArray()[0]  <= 'Z')) {
+ 	for (int i = 0; i<arr.length; i++) {
+ 		if ( (arr[i].toCharArray()[0] >= 'a' && arr[i].toCharArray()[0]  <= 'z') ||
+ 		           (arr[i].toCharArray()[0]  >= 'A' && arr[i].toCharArray()[0]  <= 'Z')) {
  			System.out.println("Function is applied on numbers only!");
  			break;
 
  		}
  		else {
- 				  if (isprime(Integer.parseInt(mynum[i]))) {
+ 				  if (isprime(Integer.parseInt(arr[i]))) {
  					  counter++;
  				  }
  				  else {
@@ -209,5 +218,13 @@ import java.util.Scanner;
         }
          System.out.println("Array is Sorted");
     }
+
     
 }
+
+
+
+}
+
+}
+
