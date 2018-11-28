@@ -7,7 +7,9 @@ package team22;
 java.lang.NumberFormatException;
 import java.lang.Math;
 import java.util.Scanner;
+ import java.util.Scanner;
 
+ public class Team22 {
 /**
  *
  * @author AndrOoO
@@ -18,7 +20,18 @@ import java.util.Scanner;
 	 
  public class Team22 {
 
+    public static void main(String[] args) {
 
+        System.out.println("Team 22");
+        System.out.print("Enter array size: ");
+        Scanner sc = new Scanner(System.in);
+        int siz = sc.nextInt();
+        arr = new String[siz];
+
+        System.out.println("Enter array elements:");
+        for (int i = 0; i < siz; i++) {
+            arr[i] = sc.next();
+        }
      private static String[] arr;
 
      public static void main(String[] args) {
@@ -38,35 +51,25 @@ import java.util.Scanner;
          int choice = sc.nextInt();
          switch (choice) {
              case 1: //most repeated value
-
                  break;
-
              case 2: //sort
 
                  break;
-
              case 3: //shuffle
 
                  break;
              case 4: //find largest prime
-
                  break;
 
              case 5: //find smallest prime
               leastPrime();
                  break;
-
              case 6: //check palindrome
-
+             
                  break;
-
              case 7: //check sorted
              checkSorted();
                 break;
-            case 9: //reverse array
-                reversearray();    
-                break;
-
              case 8: //count primes
              	countPrimes();
                  break;
@@ -74,9 +77,8 @@ import java.util.Scanner;
 
 
              case 9: //reverse array
-
-                 break;
-
+            reversearray();
+              break;
              case 10: //shift array
 
                  break;
@@ -84,7 +86,6 @@ import java.util.Scanner;
              case 11: //distinct array
 
                  break;
-
              case 12: //get the max 3 numbers
 
                  break;
@@ -100,14 +101,33 @@ import java.util.Scanner;
              case 15: //get median
              
               break;
-             case 16: //return only primes
-             
-              break;
-             case 17: //zero if less than zero
-                
-             break;
-             case 18: //execute all
-                 break;
+            case 16: //return only primes
+
+                break;
+            case 17: //zero if less than zero
+
+                break;
+            case 18: //execute all
+                break;
+        }
+    }
+
+    public static void reversearray() {
+        int j = 0;
+        String ar[] = new String[arr.length];
+        for (int i = arr.length - 1; i >= 0; i--)//do reverse
+        {
+            ar[j] = arr[i];
+            j++;
+        }
+        for (int i = 0; i < ar.length; i++)//print reverse arr
+        {
+            if (i == ar.length - 1) {
+                System.out.println(ar[i]);
+            } else {
+                System.out.print(ar[i] + ",");
+            }
+        }
     }
 	public static void reversearray()
     {   int j=0;
@@ -213,6 +233,77 @@ import java.util.Scanner;
  }
 
     }
+    public static void countPrimes() {
+        int counter = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if ((arr[i].toCharArray()[0] >= 'a' && arr[i].toCharArray()[0] <= 'z')
+                    || (arr[i].toCharArray()[0] >= 'A' && arr[i].toCharArray()[0] <= 'Z')) {
+                System.out.println("Function is applied on numbers only!");
+                break;
+
+            } else {
+                if (isprime(Integer.parseInt(arr[i]))) {
+                    counter++;
+                } else {
+                    counter += 0;
+                }
+
+            }
+
+            //System.out.println(counter);
+        }
+        if (counter != 0) {
+            System.out.println(counter);
+        }
+    }
+
+    public static boolean isprime(int n) {
+
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+    private static void leastPrime() {
+        int lp = Integer.MAX_VALUE;
+        for (int l = 0; l < arr.length; ++l) {
+            if (Character.isLetter(arr[l].charAt(l))) {
+                System.out.println("Function is applied on numbers only!");
+                break;
+            }
+            if (Integer.parseInt(arr[l]) == 2) {
+                lp = Integer.parseInt(arr[l]);
+                break;
+            }
+            if (Integer.parseInt(arr[l]) == 3) {
+                lp = Integer.parseInt(arr[l]);
+            }
+            if (Integer.parseInt(arr[l]) % 2 == 0) {
+                continue;
+            }
+            for (int i = 3; i <= (int) Math.sqrt(Integer.parseInt(arr[l])) + 1; i += 2) {
+                if (Integer.parseInt(arr[l]) % i == 0 && Integer.parseInt(arr[l]) != 3) {
+                    break;
+                }
+                if (lp >= Integer.parseInt(arr[l])) {
+                    lp = Integer.parseInt(arr[l]);
+                }
+            }
+        }
+        if (lp == Integer.MAX_VALUE) {
+            System.out.println("No primes");
+        } else {
+            System.out.print(lp);
+        }
+    }
+
+    public static void checkSorted() {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i].charAt(0) > arr[i + 1].charAt(0)) {
 	private static void leastPrime()
 	{	int lp = Integer.MAX_VALUE;
 		for (int l = 0; l < arr.length; ++l) 
@@ -249,13 +340,13 @@ import java.util.Scanner;
         for(int i = 0; i<arr.length -1 ; i++){
             if(arr[i].charAt(0) >  arr[i + 1].charAt(0))
             {
+
                 System.out.println("Array is not Sorted");
                 return;
             }
         }
-         System.out.println("Array is Sorted");
+        System.out.println("Array is Sorted");
     }
-
 
 }
 
