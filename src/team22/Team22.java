@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package team22;
-
+java.lang.NumberFormatException;
+import java.lang.Math;
 import java.util.Scanner;
 
 /**
@@ -45,6 +46,9 @@ import java.util.Scanner;
 
                  break;
 
+            case 5: //find smallest prime
+				leastPrime();
+                break;
              case 4: //find largest prime
 
                  break;
@@ -176,6 +180,37 @@ import java.util.Scanner;
  }
 
     }
+	private static void leastPrime()
+	{	int lp = Integer.MAX_VALUE;
+		for (int l = 0; l < arr.length; ++l) 
+	{
+		if ( Character.isLetter(numbers[l].charAt(l)))
+		{
+			System.out.println("Function is applied on numbers only!");
+			break;
+		}
+      if (Integer.parseInt(arr[l]) == 2) 
+	  {
+        lp = Integer.parseInt(arr[l]);
+        break;
+      }
+      if (Integer.parseInt(arr[l]) == 3)
+        lp = Integer.parseInt(arr[l]);
+      if (Integer.parseInt(arr[l]) % 2 == 0)
+        continue;
+      for (int i = 3; i <= (int) Math.sqrt(Integer.parseInt(arr[l])) + 1; i += 2) 
+	  {
+        if (Integer.parseInt(arr[l]) % i == 0 && Integer.parseInt(arr[l]) != 3)
+          break;
+        if (lp >= Integer.parseInt(arr[l]))
+          lp = Integer.parseInt(arr[l]);
+      }
+    }
+    if (lp == Integer.MAX_VALUE)
+      System.out.println("No primes");
+    else
+      System.out.print(lp);	
+	}
     
     public static void checkSorted(){
         for(int i = 0; i<arr.length -1 ; i++){
