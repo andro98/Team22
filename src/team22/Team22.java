@@ -17,18 +17,32 @@ public class Team22 {
 
     private static String[] arr;
 
-    public static void main(String[] args) {
 
-        System.out.println("Team 22");
-        System.out.print("Enter array size: ");
-        Scanner sc = new Scanner(System.in);
-        int siz = sc.nextInt();
-        arr = new String[siz];
-
-        System.out.println("Enter array elements:");
-        for (int i = 0; i < siz; i++) {
-            arr[i] = sc.next();
+  public static void shiftArray()
+        {
+            String newArray="" , array="";
+            
+         for(int i=0 ; i<arr.length; i++)
+         {
+             array+= arr[i];
+         }
+        System.out.println("Old Array is: "); 
+        System.out.println(array);    
+        char temp; 
+        temp = array.charAt(0) ; 
+        for(int i=1 ; i<array.length(); i++)
+        {   
+            newArray+=array.charAt(i);
+           
         }
+       newArray+=temp;
+        
+        System.out.println(newArray);
+        
+      
+        }
+
+     private static String[] arr;
 
         printMenu();
         int choice = sc.nextInt();
@@ -54,6 +68,7 @@ public class Team22 {
 
 
 
+ 
             case 6: //check palindrome
 
                 break;
@@ -64,11 +79,41 @@ public class Team22 {
 
             case 8: //count primes
                 countPrimes(arr);
+         printMenu();
+         int choice = sc.nextInt();
+         switch (choice) {
+             case 1: //most repeated value
+                 break;
+             case 2: //sort
+
+                 break;
+             case 3: //shuffle
+
+                 break;
+             case 4: //find largest prime
+                 break;
+
+             case 5: //find smallest prime
+              leastPrime();
+                 break;
+             case 6: //check palindrome
+				palindrome();
+                 break;
+             case 7: //check sorted
+             checkSorted();
+
                 break;
+
 
             case 9: //reverse array
 
                 break;
+
+
+             case 9: //reverse array
+            reversearray();
+              break;
+             case 10: //shift array
 
 
             case 10: //shift array
@@ -108,8 +153,29 @@ public class Team22 {
                 break;
         }
 
+ shiftArray
     }
 
+
+    public static void reversearray() {
+        int j = 0;
+        String ar[] = new String[arr.length];
+        for (int i = arr.length - 1; i >= 0; i--)//do reverse
+        {
+            ar[j] = arr[i];
+            j++;
+        }
+        for (int i = 0; i < ar.length; i++)//print reverse arr
+        {
+            if (i == ar.length - 1) {
+                System.out.println(ar[i]);
+            } else {
+                System.out.print(ar[i] + ",");
+            }
+        }
+    }
+         
+ master
     private static void printMenu() {
         System.out.println("Choose the number of operation you want to execute:");
         System.out.println("1-\tMost repeated value");
@@ -130,6 +196,7 @@ public class Team22 {
         System.out.println("16-\tReturn only primes");
         System.out.println("17-\tZero if less than zero");
         System.out.println("18-\tExecute All");
+
 
     }
 
@@ -201,6 +268,99 @@ private static void leastPrime()
       System.out.print(lp);
 	}
 
+
+             
+         }
+
+     }
+         
+ public static void countPrimes() {
+ 	int counter = 0;
+ 	for (int i = 0; i<arr.length; i++) {
+ 		if ( (arr[i].toCharArray()[0] >= 'a' && arr[i].toCharArray()[0]  <= 'z') ||
+ 		           (arr[i].toCharArray()[0]  >= 'A' && arr[i].toCharArray()[0]  <= 'Z')) {
+ 			System.out.println("Function is applied on numbers only!");
+ 			break;
+
+ 		}
+ 		else {
+ 				  if (isprime(Integer.parseInt(arr[i]))) {
+ 					  counter++;
+ 				  }
+ 				  else {
+ 					  counter+=0;
+ 				  }
+ 				
+ 		}
+ 			
+ 		//System.out.println(counter);
+ 		
+ 	}
+ 	if (counter!=0) {
+ 	System.out.println(counter);
+ 	        }
+        }
+         
+public static void palindrome(){
+        int reminder, sum = 0, temp;
+        int n = Integer.parseInt(JOptionPane.showInputDialog("Please enter your numbers: ")); 
+
+        temp = n;
+        while (n > 0) {
+            reminder = n % 10; 
+            sum = (sum * 10) + reminder;
+            n = n / 10;
+        }
+        if (temp == sum)
+            System.out.println("palindrome number ");
+        else
+            System.out.println("not palindrome");
+    }
+         
+ public static boolean isprime(int n) {
+ 	
+ 	for(int i=2;i<n;i++) {
+         if(n%i==0)
+             return false;
+     }
+     return true;
+ 	
+ }
+         
+ public static void leastPrime() {
+        int lp = Integer.MAX_VALUE;
+        for (int l = 0; l < arr.length; ++l) {
+            if (Character.isLetter(arr[l].charAt(l))) {
+                System.out.println("Function is applied on numbers only!");
+                break;
+            }
+            if (Integer.parseInt(arr[l]) == 2) {
+                lp = Integer.parseInt(arr[l]);
+                break;
+            }
+            if (Integer.parseInt(arr[l]) == 3) {
+                lp = Integer.parseInt(arr[l]);
+            }
+            if (Integer.parseInt(arr[l]) % 2 == 0) {
+                continue;
+            }
+            for (int i = 3; i <= (int) Math.sqrt(Integer.parseInt(arr[l])) + 1; i += 2) {
+                if (Integer.parseInt(arr[l]) % i == 0 && Integer.parseInt(arr[l]) != 3) {
+                    break;
+                }
+                if (lp >= Integer.parseInt(arr[l])) {
+                    lp = Integer.parseInt(arr[l]);
+                }
+            }
+        }
+        if (lp == Integer.MAX_VALUE) {
+            System.out.println("No primes");
+        } else {
+            System.out.print(lp);
+        }
+    }  
+    
+
     public static void checkSorted(){
         for(int i = 0; i<arr.length -1 ; i++){
             if(arr[i].charAt(0) >  arr[i + 1].charAt(0))
@@ -214,6 +374,7 @@ private static void leastPrime()
  public static void shiftArray(String[] x)
         {
             String newArray="" , array="";
+
 
          for(int i=0 ; i<x.length; i++)
          {
@@ -234,4 +395,5 @@ private static void leastPrime()
 
 
         }
+
 }
