@@ -20,18 +20,6 @@ import java.util.Scanner;
 	 
  public class Team22 {
 
-    public static void main(String[] args) {
-
-        System.out.println("Team 22");
-        System.out.print("Enter array size: ");
-        Scanner sc = new Scanner(System.in);
-        int siz = sc.nextInt();
-        arr = new String[siz];
-
-        System.out.println("Enter array elements:");
-        for (int i = 0; i < siz; i++) {
-            arr[i] = sc.next();
-        }
      private static String[] arr;
 
      public static void main(String[] args) {
@@ -73,8 +61,6 @@ import java.util.Scanner;
              case 8: //count primes
              	countPrimes();
                  break;
-
-
 
              case 9: //reverse array
             reversearray();
@@ -129,21 +115,7 @@ import java.util.Scanner;
             }
         }
     }
-	public static void reversearray()
-    {   int j=0;
-     String ar []= new String[arr.length];
-        for(int i=arr.length-1;i>=0;i--)//do reverse
-        {
-         ar[j]=arr[i];
-         j++;
-        }
-        for(int i=0;i<ar.length;i++)//print reverse arr
-        {   if(i==ar.length-1) 
-				System.out.println(ar[i]);
-            else  
-				System.out.print(ar[i]+",");
-        }   
-    }
+         
     private static void printMenu() {
         System.out.println("Choose the number of operation you want to execute:");
         System.out.println("1-\tMost repeated value");
@@ -168,6 +140,7 @@ import java.util.Scanner;
          }
 
      }
+         
  public static void countPrimes() {
  	int counter = 0;
  	for (int i = 0; i<arr.length; i++) {
@@ -192,8 +165,9 @@ import java.util.Scanner;
  	}
  	if (counter!=0) {
  	System.out.println(counter);
- 	}
- 	}
+ 	        }
+        }
+         
 public static void palindrome(){
         int reminder, sum = 0, temp;
         int n = Integer.parseInt(JOptionPane.showInputDialog("Please enter your numbers: ")); 
@@ -209,6 +183,7 @@ public static void palindrome(){
         else
             System.out.println("not palindrome");
     }
+         
  public static boolean isprime(int n) {
  	
  	for(int i=2;i<n;i++) {
@@ -218,6 +193,7 @@ public static void palindrome(){
      return true;
  	
  }
+         
  public static void leastPrime() {
         int lp = Integer.MAX_VALUE;
         for (int l = 0; l < arr.length; ++l) {
@@ -249,41 +225,7 @@ public static void palindrome(){
         } else {
             System.out.print(lp);
         }
-    }
-	public static void checkSorted() {
-        for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i].charAt(0) > arr[i + 1].charAt(0)) {
-	private static void leastPrime()
-	{	int lp = Integer.MAX_VALUE;
-		for (int l = 0; l < arr.length; ++l) 
-	{
-		if ( Character.isLetter(numbers[l].charAt(l)))
-		{
-			System.out.println("Function is applied on numbers only!");
-			break;
-		}
-      if (Integer.parseInt(arr[l]) == 2) 
-	  {
-        lp = Integer.parseInt(arr[l]);
-        break;
-      }
-      if (Integer.parseInt(arr[l]) == 3)
-        lp = Integer.parseInt(arr[l]);
-      if (Integer.parseInt(arr[l]) % 2 == 0)
-        continue;
-      for (int i = 3; i <= (int) Math.sqrt(Integer.parseInt(arr[l])) + 1; i += 2) 
-	  {
-        if (Integer.parseInt(arr[l]) % i == 0 && Integer.parseInt(arr[l]) != 3)
-          break;
-        if (lp >= Integer.parseInt(arr[l]))
-          lp = Integer.parseInt(arr[l]);
-      }
-    }
-    if (lp == Integer.MAX_VALUE)
-      System.out.println("No primes");
-    else
-      System.out.print(lp);	
-	}
+    }  
     
     public static void checkSorted(){
         for(int i = 0; i<arr.length -1 ; i++){
@@ -296,125 +238,5 @@ public static void palindrome(){
         }
         System.out.println("Array is Sorted");
     }
-
-}
- }
-}
-    public static void countPrimes() {
-        int counter = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if ((arr[i].toCharArray()[0] >= 'a' && arr[i].toCharArray()[0] <= 'z')
-                    || (arr[i].toCharArray()[0] >= 'A' && arr[i].toCharArray()[0] <= 'Z')) {
-                System.out.println("Function is applied on numbers only!");
-                break;
-
-            } else {
-                if (isprime(Integer.parseInt(arr[i]))) {
-                    counter++;
-                } else {
-                    counter += 0;
-                }
-
-            }
-
-            //System.out.println(counter);
-        }
-        if (counter != 0) {
-            System.out.println(counter);
-        }
-    }
-
-    public static boolean isprime(int n) {
-
-        for (int i = 2; i < n; i++) {
-            if (n % i == 0) {
-                return false;
-            }
-        }
-        return true;
-
-    }
-
-    public static void leastPrime() {
-        int lp = Integer.MAX_VALUE;
-        for (int l = 0; l < arr.length; ++l) {
-            if (Character.isLetter(arr[l].charAt(l))) {
-                System.out.println("Function is applied on numbers only!");
-                break;
-            }
-            if (Integer.parseInt(arr[l]) == 2) {
-                lp = Integer.parseInt(arr[l]);
-                break;
-            }
-            if (Integer.parseInt(arr[l]) == 3) {
-                lp = Integer.parseInt(arr[l]);
-            }
-            if (Integer.parseInt(arr[l]) % 2 == 0) {
-                continue;
-            }
-            for (int i = 3; i <= (int) Math.sqrt(Integer.parseInt(arr[l])) + 1; i += 2) {
-                if (Integer.parseInt(arr[l]) % i == 0 && Integer.parseInt(arr[l]) != 3) {
-                    break;
-                }
-                if (lp >= Integer.parseInt(arr[l])) {
-                    lp = Integer.parseInt(arr[l]);
-                }
-            }
-        }
-        if (lp == Integer.MAX_VALUE) {
-            System.out.println("No primes");
-        } else {
-            System.out.print(lp);
-        }
-    }
-
-    public static void checkSorted() {
-        for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i].charAt(0) > arr[i + 1].charAt(0)) {
-	private static void leastPrime()
-	{	int lp = Integer.MAX_VALUE;
-		for (int l = 0; l < arr.length; ++l) 
-	{
-		if ( Character.isLetter(numbers[l].charAt(l)))
-		{
-			System.out.println("Function is applied on numbers only!");
-			break;
-		}
-      if (Integer.parseInt(arr[l]) == 2) 
-	  {
-        lp = Integer.parseInt(arr[l]);
-        break;
-      }
-      if (Integer.parseInt(arr[l]) == 3)
-        lp = Integer.parseInt(arr[l]);
-      if (Integer.parseInt(arr[l]) % 2 == 0)
-        continue;
-      for (int i = 3; i <= (int) Math.sqrt(Integer.parseInt(arr[l])) + 1; i += 2) 
-	  {
-        if (Integer.parseInt(arr[l]) % i == 0 && Integer.parseInt(arr[l]) != 3)
-          break;
-        if (lp >= Integer.parseInt(arr[l]))
-          lp = Integer.parseInt(arr[l]);
-      }
-    }
-    if (lp == Integer.MAX_VALUE)
-      System.out.println("No primes");
-    else
-      System.out.print(lp);	
-	}
-    
-    public static void checkSorted(){
-        for(int i = 0; i<arr.length -1 ; i++){
-            if(arr[i].charAt(0) >  arr[i + 1].charAt(0))
-            {
-
-                System.out.println("Array is not Sorted");
-                return;
-            }
-        }
-        System.out.println("Array is Sorted");
-    }
-
-}
 
 }
