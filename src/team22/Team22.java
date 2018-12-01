@@ -113,19 +113,16 @@ public class Team22 {
              case 9: //reverse array
             reversearray();
               break;
-             case 10: //shift array
-
-
             case 10: //shift array
                 shiftArray(arr);
                 break;
 
+
             case 11: //distinct array
 
                 break;
-
-            case 12: //get the max 3 numbers
-
+             case 12: //get the max 3 numbers
+				Greatest();
                 break;
 
             case 13: //get the min 3 numbers
@@ -397,3 +394,24 @@ public static void palindrome(){
         }
 
 }
+public static void Greatest() {
+	 int x, y, z;
+    System.out.println("Enter three integers");
+    Scanner in = new Scanner(System.in);
+ 
+    x = in.nextInt();
+    y = in.nextInt();
+    z = in.nextInt();
+ 
+    if (x > y && x > z)
+      System.out.println("First number is largest.");
+    else if (y > x && y > z)
+      System.out.println("Second number is largest.");
+    else if (z > x && z > y)
+      System.out.println("Third number is largest.");
+    else
+      System.out.println("The numbers are not distinct.");
+
+}
+
+
