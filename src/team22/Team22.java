@@ -4,14 +4,14 @@
  * and open the template in the editor.
  */
 package team22;
-
-
+java.lang.NumberFormatException;
+import java.lang.Math;
+import java.util.Scanner;
 
 /**
  *
  * @author AndrOoO
  */
-import java.util.Scanner;
 
 public class Team22 {
 
@@ -43,42 +43,6 @@ public class Team22 {
         }
 
      private static String[] arr;
-
-        printMenu();
-        int choice = sc.nextInt();
-        switch (choice) {
-            case 1: //most repeated value
-
-                break;
-
-            case 2: //sort
-
-                break;
-
-            case 3: //shuffle
-
-                break;
-
-            case 5: //find smallest prime
-                leastPrime();
-                break;
-            case 4: //find largest prime
-
-                break;
-
-
-
- 
-            case 6: //check palindrome
-
-                break;
-
-            case 7: //check sorted
-                checkSorted();
-                break;
-
-            case 8: //count primes
-                countPrimes(arr);
          printMenu();
          int choice = sc.nextInt();
          switch (choice) {
@@ -97,19 +61,15 @@ public class Team22 {
               leastPrime();
                  break;
              case 6: //check palindrome
-				palindrome();
+		palindrome();
                  break;
              case 7: //check sorted
              checkSorted();
 
                 break;
-
-
-            case 9: //reverse array
-
-                break;
-
-
+		case 8: //count primes
+             	countPrimes(arr);
+                 break;
              case 9: //reverse array
             reversearray();
               break;
@@ -122,7 +82,7 @@ public class Team22 {
 
                 break;
              case 12: //get the max 3 numbers
-				Greatest();
+		Greatest();
                 break;
 
             case 13: //get the min 3 numbers
@@ -149,8 +109,6 @@ public class Team22 {
 
                 break;
         }
-
- shiftArray
     }
 
 
@@ -172,7 +130,7 @@ public class Team22 {
         }
     }
          
- master
+
     private static void printMenu() {
         System.out.println("Choose the number of operation you want to execute:");
         System.out.println("1-\tMost repeated value");
