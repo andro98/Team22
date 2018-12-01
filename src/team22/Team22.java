@@ -22,7 +22,9 @@ public class team222 {
         }
 
         printMenu();
-        int choice = sc.nextInt();
+        System.out.print("\nEnter your choice: ");
+        Scanner coi = new Scanner(System.in);
+        int choice = coi.nextInt();
         switch (choice) {
             case 1: //most repeated value
 
@@ -40,7 +42,7 @@ public class team222 {
                 leastPrime();
                 break;
             case 4: //find largest prime
-
+                Max_Prime();
                 break;
 
             case 6: //check palindrome
@@ -300,5 +302,43 @@ public class team222 {
             System.out.println("not palindrome");
         }
     }
+    
+   public static void Max_Prime()
+	{
+	   int[] num=new int[arr.length];
+	   for (int i = 0; i < arr.length; i++) {
+		num[i]=Integer.parseInt(arr[i]);
+	}
+       int Max=-1,temp=0;
+	   
+	   for (int i = 0; i < num.length; i++) {
+		   boolean isPrime=true;
+		   if(num[i]<2)
+			   isPrime=false;
+		   else
+		   {
+			   for(int j=2;j<=num[i]/2;j++)
+				{
+				   temp=num[i]%j;
+				   if(temp==0)
+				   {
+					  isPrime=false;
+				      break;
+				   }
+				}
+		   }
+		   if(isPrime)
+		   {
+			   if (Max<num[i])
+				   Max=num[i];
+		   }
+	}
+		if (Max==-1) 
+			System.out.println("There's no prime numbers in the array ");
+		else 
+		 System.out.println("Largest prime = "+Max);
+		
+		
+	}
 
 }
