@@ -7,11 +7,14 @@ package team22;
 java.lang.NumberFormatException;
 import java.lang.Math;
 import java.util.Scanner;
-
+import java.util.Random;
 /**
  *
  * @author AndrOoO
  */
+
+
+
 
 public class Team22 {
 
@@ -41,8 +44,25 @@ public class Team22 {
         
       
         }
+    public static int ShuffleArray()
+    {
+        Random rgen = new Random();  // Random number generator
+
+        for (int i=0; i<arr.length; i++) {
+            int randomPosition = rgen.nextInt(arr.length);
+            int temp = arr[i];
+            arr[i] = arr[randomPosition];
+            arr[randomPosition] = temp;
+        }
+     //private static String[] arr;
+     return arr;  
+    }
+
 
      private static String[] arr;
+        Scanner sc=new Scanner(System.in);
+        printMenu();
+        int choice = sc.nextInt();
          printMenu();
          int choice = sc.nextInt();
          switch (choice) {
