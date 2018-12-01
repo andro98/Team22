@@ -80,7 +80,7 @@ public class Team22 {
                 break;
 
             case 15: //get median
-                getMedian(siz);
+                System.out.println(getMedian());
                 break;
             case 16: //return only primes
 
@@ -300,16 +300,16 @@ public class Team22 {
             System.out.println("not palindrome");
         }
     }
-    public static String getMedian(int size)
+    public static String getMedian()
     {
         sort_array();
-        if (size %2 != 0)   
+        if (arr.length %2 != 0)   
         {
-            return arr[(int)Math.ceil(size/2.0)];
+            return arr[((int)Math.ceil(arr.length/2.0)) -1];
         }
         else
         {
-            return ""+ ((Integer.parseInt(arr[size/2]) + Integer.parseInt(arr[(size/2)-1]))/2.0);
+            return ""+ ((Integer.parseInt(arr[arr.length/2]) + Integer.parseInt(arr[(arr.length/2)-1]))/2.0);
         }
         
     }
