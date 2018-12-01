@@ -13,7 +13,7 @@ package team22;
  */
 import java.util.Random;
 import java.util.Scanner;
-
+import java.util.*;
 public class Team22 {
 
     private static String[] arr;
@@ -100,7 +100,7 @@ public class Team22 {
              case 1: //most repeated value
                  break;
              case 2: //sort
-
+		sort_array();
                  break;
              case 3: //shuffle
 
@@ -429,4 +429,20 @@ public static void Greatest() {
 
 }
 
+ public static void sort_array (){
+            Scanner scan = new Scanner (System.in);
+            System.out.println("enter the array size :");
+            int sz = scan.nextInt();
+            int [] input_array = new int [sz];
+            System.out.println("enter the array :");
+            for (int i = 0 ; i < sz ;i++){
+                input_array[i] = scan.nextInt();
+            }
+            Arrays.sort(input_array);
+            System.out.println("the array after sort :");
+            for (int i = 0 ; i < sz ;i++){
+                System.out.print(input_array[i]+" ");
+            }
+            System.out.println("");
+     }
 
