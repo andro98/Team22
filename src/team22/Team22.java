@@ -42,15 +42,15 @@ public class Team22 {
         
       
         }
-    public static int[] ShuffleArray(int[] array)
+    public static int[] ShuffleArray()
     {
         Random rgen = new Random();  // Random number generator
 
-        for (int i=0; i<array.length; i++) {
-            int randomPosition = rgen.nextInt(array.length);
-            int temp = array[i];
-            array[i] = array[randomPosition];
-            array[randomPosition] = temp;
+        for (int i=0; i<arr.length; i++) {
+            int randomPosition = rgen.nextInt(arr.length);
+            int temp = arr[i];
+            arr[i] = arr[randomPosition];
+            arr[randomPosition] = temp;
         }
 
         return array;
@@ -71,7 +71,7 @@ public class Team22 {
                 break;
 
             case 3: //shuffle
-               arr=ShuffleArray(arr);    //20160011
+               ShuffleArray();    //20160011
                 break;
 
             case 5: //find smallest prime
