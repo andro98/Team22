@@ -88,7 +88,7 @@ public class team222 {
 
                 break;
             case 17: //zero if less than zero
-
+            	Set_Zero();
                 break;
             case 18: //execute all
                 break;
@@ -340,5 +340,21 @@ public class team222 {
 		
 		
 	}
+   public static void Set_Zero() {
+	   int[] num=new int[arr.length];
+	   for (int i = 0; i < arr.length; i++) {
+			num[i]=Integer.parseInt(arr[i]);
+		}
+	   for (int i = 0; i < num.length; i++) {
+		if (num[i]<0) {
+			num[i]=0;
+		}
+	}
+	   System.out.println("Array after function : ");
+	   for (int i = 0; i < num.length; i++) {
+		System.out.print(num[i]+"   ");
+	}
+}
+   
 
 }
