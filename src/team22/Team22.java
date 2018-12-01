@@ -11,6 +11,7 @@ package team22;
  *
  * @author AndrOoO
  */
+import java.util.Random;
 import java.util.Scanner;
 
 public class Team22 {
@@ -41,9 +42,23 @@ public class Team22 {
         
       
         }
+    public static int[] ShuffleArray()
+    {
+        Random rgen = new Random();  // Random number generator
+
+        for (int i=0; i<arr.length; i++) {
+            int randomPosition = rgen.nextInt(arr.length);
+            int temp = arr[i];
+            arr[i] = arr[randomPosition];
+            arr[randomPosition] = temp;
+        }
+
+        return array;
+    }
+
 
      private static String[] arr;
-
+        Scanner sc=new Scanner(System.in);
         printMenu();
         int choice = sc.nextInt();
         switch (choice) {
@@ -56,7 +71,7 @@ public class Team22 {
                 break;
 
             case 3: //shuffle
-
+               ShuffleArray();    //20160011
                 break;
 
             case 5: //find smallest prime
