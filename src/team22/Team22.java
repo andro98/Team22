@@ -82,7 +82,7 @@ public class team222 {
                 break;
 
             case 15: //get median
-
+                System.out.println(getMedian());
                 break;
             case 16: //return only primes
 
@@ -199,6 +199,7 @@ public class team222 {
 
         System.out.println(newArray);
 
+
     }
 
     public static void Greatest() {
@@ -221,6 +222,31 @@ public class team222 {
         }
 
     }
+
+
+    }
+
+    public static void Greatest() {
+        int x, y, z;
+        System.out.println("Enter three integers");
+        Scanner in = new Scanner(System.in);
+
+        x = in.nextInt();
+        y = in.nextInt();
+        z = in.nextInt();
+
+        if (x > y && x > z) {
+            System.out.println("First number is largest.");
+        } else if (y > x && y > z) {
+            System.out.println("Second number is largest.");
+        } else if (z > x && z > y) {
+            System.out.println("Third number is largest.");
+        } else {
+            System.out.println("The numbers are not distinct.");
+        }
+
+    }
+
 
     public static void sort_array() {
         /*Scanner scan = new Scanner(System.in);
@@ -302,6 +328,26 @@ public class team222 {
             System.out.println("not palindrome");
         }
     }
+    public static String getMedian()
+    {
+        sort_array();
+        if (arr.length %2 != 0)   
+        {
+            return arr[((int)Math.ceil(arr.length/2.0)) -1];
+        }
+        else
+        {
+            return ""+ ((Integer.parseInt(arr[arr.length/2]) + Integer.parseInt(arr[(arr.length/2)-1]))/2.0);
+        }
+        
+    }
+        }
+        if (temp == sum) {
+            System.out.println("palindrome number ");
+        } else {
+            System.out.println("not palindrome");
+        }
+    }
     
    public static void Max_Prime()
 	{
@@ -356,5 +402,6 @@ public class team222 {
 	}
 }
    
+
 
 }
