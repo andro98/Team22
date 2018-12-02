@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.*;
 import javax.swing.JOptionPane;
 
-public class Team22 {
+public class team222 {
 
     private static String[] arr;
 
@@ -22,7 +22,9 @@ public class Team22 {
         }
 
         printMenu();
-        int choice = sc.nextInt();
+        System.out.print("\nEnter your choice: ");
+        Scanner coi = new Scanner(System.in);
+        int choice = coi.nextInt();
         switch (choice) {
             case 1: //most repeated value
 
@@ -40,7 +42,7 @@ public class Team22 {
                 leastPrime();
                 break;
             case 4: //find largest prime
-
+                Max_Prime();
                 break;
 
             case 6: //check palindrome
@@ -86,7 +88,7 @@ public class Team22 {
 
                 break;
             case 17: //zero if less than zero
-
+            	Set_Zero();
                 break;
             case 18: //execute all
                 break;
@@ -197,6 +199,7 @@ public class Team22 {
 
         System.out.println(newArray);
 
+
     }
 
     public static void Greatest() {
@@ -219,6 +222,31 @@ public class Team22 {
         }
 
     }
+
+
+    }
+
+    public static void Greatest() {
+        int x, y, z;
+        System.out.println("Enter three integers");
+        Scanner in = new Scanner(System.in);
+
+        x = in.nextInt();
+        y = in.nextInt();
+        z = in.nextInt();
+
+        if (x > y && x > z) {
+            System.out.println("First number is largest.");
+        } else if (y > x && y > z) {
+            System.out.println("Second number is largest.");
+        } else if (z > x && z > y) {
+            System.out.println("Third number is largest.");
+        } else {
+            System.out.println("The numbers are not distinct.");
+        }
+
+    }
+
 
     public static void sort_array() {
         /*Scanner scan = new Scanner(System.in);
@@ -313,6 +341,67 @@ public class Team22 {
         }
         
     }
+        }
+        if (temp == sum) {
+            System.out.println("palindrome number ");
+        } else {
+            System.out.println("not palindrome");
+        }
+    }
+    
+   public static void Max_Prime()
+	{
+	   int[] num=new int[arr.length];
+	   for (int i = 0; i < arr.length; i++) {
+		num[i]=Integer.parseInt(arr[i]);
+	}
+       int Max=-1,temp=0;
+	   
+	   for (int i = 0; i < num.length; i++) {
+		   boolean isPrime=true;
+		   if(num[i]<2)
+			   isPrime=false;
+		   else
+		   {
+			   for(int j=2;j<=num[i]/2;j++)
+				{
+				   temp=num[i]%j;
+				   if(temp==0)
+				   {
+					  isPrime=false;
+				      break;
+				   }
+				}
+		   }
+		   if(isPrime)
+		   {
+			   if (Max<num[i])
+				   Max=num[i];
+		   }
+	}
+		if (Max==-1) 
+			System.out.println("There's no prime numbers in the array ");
+		else 
+		 System.out.println("Largest prime = "+Max);
+		
+		
+	}
+   public static void Set_Zero() {
+	   int[] num=new int[arr.length];
+	   for (int i = 0; i < arr.length; i++) {
+			num[i]=Integer.parseInt(arr[i]);
+		}
+	   for (int i = 0; i < num.length; i++) {
+		if (num[i]<0) {
+			num[i]=0;
+		}
+	}
+	   System.out.println("Array after function : ");
+	   for (int i = 0; i < num.length; i++) {
+		System.out.print(num[i]+"   ");
+	}
+}
+   
 
 
 }
